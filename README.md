@@ -13,7 +13,7 @@
 
 - **Change Detection**: Tracks JS and HTML endpoints for content modifications using SHA-1 hashing.
 - **Beautified Archiving**: Automatically formats and saves readable versions of changed resources for analysis.
-- **Noise-Free Output**: Quiet mode (`-q`) ensures no output unless changes are detected—ideal for cron + notify pipelines.
+- **Noise-Free Output**: Quiet mode (`-q`) ensures no output unless changes are detected - ideal for cron + notify pipelines.
 - **Concurrent Fetching**: Configurable worker threads for high-performance monitoring.
 - **Lightweight & Portable**: Single binary with no runtime dependencies beyond Go's standard library.
 
