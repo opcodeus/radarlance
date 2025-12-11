@@ -1,9 +1,9 @@
 name: Build and Release
 
 on:
-  release:
-    types: [created]
-  workflow_dispatch:
+  push:
+    tags:
+      - 'v*'
 
 permissions:
   contents: write
@@ -27,9 +27,11 @@ jobs:
       - name: List build artifacts
         run: ls -lh build
 
-      - name: Upload release assets
+      - name: Create GitHub Release and upload assets
         uses: softprops/action-gh-release@v2
         with:
+          tag_name: ${{ github.ref_name }}
           files: build/*
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
